@@ -44,7 +44,6 @@ int main(int argc, char *argv[])
 	/* code to be timed is here */
 
 	k = (int)(((n - 1) + (comm_sz - 1)) / comm_sz);
-	// printf("k: %d\n", k);
 	int local_hist_start = 2 + my_rank * k;
 	int local_hist_end = local_hist_start + k;
 	if (local_hist_end > n + 1)
@@ -56,20 +55,17 @@ int main(int argc, char *argv[])
 	int i;
 	for (i = local_hist_start; i < local_hist_end; i++)
 	{
-		// printf("i: %d\n", i);
 		int j;
 		for (j = 0; j < 5; j++)
 		{
 			if (i % factors[j] == 0)
 			{
-				// printf("\t%d is a factor\n", factors[j]);
 				local_hist[j]++;
 			}
 		}
 	}
-	// print_histogram(hist);
 
-	// Reduce all of the local sums into the global sum
+	// Reduce all of the local histograms into the global histogram
 	int global_hist[5] = {0};
 	for (int i = 0; i < 5; i++)
 	{
