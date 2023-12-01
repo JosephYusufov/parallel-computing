@@ -91,5 +91,6 @@ int main(int argc, char *argv[])
     printf("time: %lfms\n", (end - start) * 1000.00);
 
     free(A);
+    fclose(fp);
     return 0;
 }
