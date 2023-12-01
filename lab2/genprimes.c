@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-    const int MAX_PRINT_LENGTH = 0;
+    const int MAX_PRINT_LENGTH = 1000;
     double start, end, local_time, elapsed;
     int n, t, k;
     int my_rank, comm_sz;
@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 
     n = atoi(argv[1]);
     t = atoi(argv[2]);
+    printf("%d\n", t);
     if (n <= 2)
     {
         printf("n must be greater than 2\n");
@@ -55,10 +56,10 @@ int main(int argc, char *argv[])
         }
     */
 
-#pragma omp parallel for num_threads(t) schedule(static, 1)
+#pragma omp parallel for num_threads(t)
     for (int i = 2; i <= n; i++)
     { // for all numbers i from 2 to n
-        for (int j = 2; (j <= largest_divisor) && j < i; j++)
+        for (int j = 2; !A[i] && (j <= largest_divisor) && j < i; j++)
         { // for all divisors j from 2 to (n+1)/2
             if (!(i % j))
             { // if i is divisible by j
