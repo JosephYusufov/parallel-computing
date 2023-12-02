@@ -13,7 +13,7 @@ void generate_command_string(int n, int threads, char *s)
 
 int main(int argc, char *argv[])
 {
-    int const PATH_MAX = 12;
+    int const PATH_MAX = 20;
     int const CMD_MAX = 50;
     int status;
     if (argc < 2)
