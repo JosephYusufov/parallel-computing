@@ -101,6 +101,19 @@ int main(int argc, char *argv[])
         printf("\n");
     }
     printf("----------------\n");
+
+    // writing to a csv
+    FILE *fpt;
+    fpt = fopen("performance.csv", "w+");
+    fprintf(fpt, "threads, n, time, speedup, efficiency\n");
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j <= max_prob_size; j++)
+        {
+            fprintf(fpt, "%2d, %20d, %16f, %16f, %16f\n", threads[i], n[j], times[i][j], speedups[i][j], efficiencies[i][j]);
+        }
+    }
+    fclose(fpt);
     // system("./genprimes 1000 1");
     return 0;
 }
