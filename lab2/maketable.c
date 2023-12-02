@@ -29,9 +29,9 @@ int main(int argc, char *argv[])
     }
 
     // thread(1, 2, 5, 10) x n(1k, 10k, 100k, 1mn, 10mn)
-    double times[4][5] = {0};
-    double speedups[4][5] = {0};
-    double efficiencies[4][5] = {0};
+    float times[4][5] = {0};
+    float speedups[4][5] = {0};
+    float efficiencies[4][5] = {0};
     int threads[4] = {1, 2, 5, 10};
     int n[5] = {1000, 10000, 100000, 1000000, 10000000};
 
@@ -74,33 +74,33 @@ int main(int argc, char *argv[])
         printf("%2d: ", threads[i]);
         for (int j = 0; j <= max_prob_size; j++)
         {
-            printf("%12f ", times[i][j]);
+            printf("%16f ", times[i][j]);
         }
         printf("\n");
     }
-
+    printf("----------------\n");
     printf("Speedup\n");
     for (int i = 0; i < 4; i++)
     {
         printf("%2d: ", threads[i]);
         for (int j = 0; j <= max_prob_size; j++)
         {
-            printf("%12f ", speedups[i][j]);
+            printf("%16f ", speedups[i][j]);
         }
         printf("\n");
     }
-
+    printf("----------------\n");
     printf("Efficiency\n");
     for (int i = 0; i < 4; i++)
     {
         printf("%2d: ", threads[i]);
         for (int j = 0; j <= max_prob_size; j++)
         {
-            printf("%12f ", efficiencies[i][j]);
+            printf("%16f ", efficiencies[i][j]);
         }
         printf("\n");
     }
-
+    printf("----------------\n");
     // system("./genprimes 1000 1");
     return 0;
 }
