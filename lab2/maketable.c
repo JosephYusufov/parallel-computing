@@ -13,7 +13,7 @@ void generate_command_string(int n, int threads, char *s)
 
 int main(int argc, char *argv[])
 {
-    int const PATH_MAX = 20;
+    int const PATH_MAX = 30;
     int const CMD_MAX = 50;
     int status;
     if (argc < 2)
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
         printf("%2d: ", threads[i]);
         for (int j = 0; j <= max_prob_size; j++)
         {
-            printf("%16f ", times[i][j]);
+            printf("%20f ", times[i][j]);
         }
         printf("\n");
     }
@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
         printf("%2d: ", threads[i]);
         for (int j = 0; j <= max_prob_size; j++)
         {
-            printf("%16f ", speedups[i][j]);
+            printf("%20f ", speedups[i][j]);
         }
         printf("\n");
     }
@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
         printf("%2d: ", threads[i]);
         for (int j = 0; j <= max_prob_size; j++)
         {
-            printf("%16f ", efficiencies[i][j]);
+            printf("%20f ", efficiencies[i][j]);
         }
         printf("\n");
     }
@@ -110,7 +110,7 @@ int main(int argc, char *argv[])
     {
         for (int j = 0; j <= max_prob_size; j++)
         {
-            fprintf(fpt, "%2d, %20d, %16f, %16f, %16f\n", threads[i], n[j], times[i][j], speedups[i][j], efficiencies[i][j]);
+            fprintf(fpt, "%2d, %20d, %20f, %20f, %20f\n", threads[i], n[j], times[i][j], speedups[i][j], efficiencies[i][j]);
         }
     }
     fclose(fpt);
