@@ -15,10 +15,10 @@ five_thread_100k=`./genprimes 100000 5 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
 ten_thread_100k=`./genprimes 100000 10 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
 
 
-# one_thread_1mil=`./genprimes 1000000 1 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
-# two_thread_1mil=`./genprimes 1000000 2 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
-# five_thread_1mil=`./genprimes 1000000 5 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
-# ten_thread_1mil=`./genprimes 1000000 10 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
+one_thread_1mil=`./genprimes 1000000 1 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
+two_thread_1mil=`./genprimes 1000000 2 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
+five_thread_1mil=`./genprimes 1000000 5 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
+ten_thread_1mil=`./genprimes 1000000 10 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
 
 # one_thread_10mil=`./genprimes 10000000 1 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
 # two_thread_10mil=`./genprimes 10000000 2 | grep -Eo '[+-]?[0-9]+([.][0-9]+)?'`
